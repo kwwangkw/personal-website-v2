@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" sizes="32x32" href="/black-logo.svg">
+  <link rel="stylesheet" href="/build/tailwind.css">
+  <title>Kevin Wang</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+        
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      });
+  </script>
+
+  <style>
+      #menu-toggle:checked + #menu {
+        display: block;
+      }
+
+      /* HAMBURGER MENU */
+      .hamburger {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        transition: all 0.25s;
+      }
+
+      .hamburger__top-bun,
+      .hamburger__bottom-bun {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: #919191;
+        transform: rotate(0);
+        transition: all 0.5s;
+      }
+
+      .hamburger__top-bun {
+        transform: translateY(-5px);
+      }
+
+      .hamburger__bottom-bun {
+        transform: translateY(3px);
+      }
+
+      .open {
+        transform: rotate(90deg);
+        transform: translateY(-1px);
+      }
+
+      .open .hamburger__top-bun {
+        transform:
+          rotate(45deg)
+          translateY(0px);
+      }
+
+      .open .hamburger__bottom-bun {
+        transform:
+          rotate(-45deg)
+          translateY(0px);
+      }
+
+      .logo {
+        text-align: center;
+        width: 65%;
+        margin: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        user-select: none;
+      }
+
+      .logo b{
+        font: 100 10vh "Neon Tubes 2";
+        color: #67E8F9;
+        text-shadow: 0 2px 30px, 0 0 1px;
+      }
+
+      .logo strong{
+        font: 100 5vh "Neon Tubes 2";
+      }
+
+      .logo p{
+        font: 100 6vh "Neon Tubes 2";
+      }
+
+      .logo b span{
+        animation: blink linear infinite 2s;
+      }
+      .logo b span:nth-of-type(2){
+        animation: blink linear infinite 3s;
+      }
+      @keyframes blink {
+        78% {
+          color: inherit;
+          text-shadow: inherit;
+        }
+        79%{
+          color: #333;
+        }
+        80% {
+          
+          text-shadow: none;
+        }
+        81% {
+          color: inherit;
+          text-shadow: inherit;
+        }
+        82% {
+          color: #333;
+          text-shadow: none;
+        }
+        83% {
+          color: inherit;
+          text-shadow: inherit;
+        }
+        92% {
+          color: #333;
+          text-shadow: none;
+        }
+        92.5% {
+          color: inherit;
+          text-shadow: inherit;
+        }
+      }
+    
+    .pfp {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-gray-1000 font-mono">
+  <!-- Navigation Bar -->
+  <header class="lg:px-16 px-6 mt-3 bg-gray-1000 flex flex-wrap items-center lg:py-0 py-2">
+    <script>
+      function navToggle() {
+        var btn = document.getElementById('menuBtn');
+        var nav = document.getElementById('menu');
+
+        btn.classList.toggle('open');
+        nav.classList.toggle('flex');
+        nav.classList.toggle('hidden');
+      }
+    </script>
+    <div class="flex-1 flex justify-between items-center">
+        <a href="#">
+          <img width="60" height="60" src="/cyan-logo.svg" alt="Kevin">
+      </a>
+    </div>
+
+    <label for="menu-toggle" class="pointer-cursor lg:hidden block">
+      <button id="menuBtn" class="hamburger block focus:outline-none" type="button" onclick="navToggle();">
+        <span class="hamburger__top-bun"></span><span class="hamburger__bottom-bun"></span>
+      </button>
+    </label>
+
+    <input class="hidden" type="checkbox" id="menu-toggle" />
+    <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+      <nav>
+        <ul class="lg:flex items-center justify-between text-base text-darkmodewhite-100 pt-4 lg:pt-0">
+          <li><a class="ml-5 w-full lg:p-4 py-3 px-0 block border-transparent hover:text-cyan-300" href="#about">About</a></li>
+          <li><a class="ml-5 w-full lg:p-4 py-3 px-0 block border-transparent hover:text-cyan-300" href="#experience">Experience</a></li>
+          <li><a class="ml-5 w-full lg:p-4 py-3 px-0 block border-transparent hover:text-cyan-300" href="#projects">Projects</a></li>
+          <li><a class="ml-5 w-full lg:p-4 py-3 px-0 lg: mr-4 block border-transparent hover:text-cyan-300" href="#contact">Contact</a></li>
+          <li><a class="pr-4 w-full text-center lg:p-4 py-3 px-0 block border-transparent rounded text-cyan-300 hover:bg-opacity-15 hover:bg-cyan-300 lg:mb-0 mb-2" href="#">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Divider -->
+  <span>
+    <div class="lg:px-16 pr-6 mt-1 bg-gray-1000 flex flex-wrap items-center lg:py-1 py-0 lg:mx-20 mr-6 ml-10 border-b border-darkmodewhite-100"></div>
+  </span>
+
+  <!-- Home -->
+  <div class="px-4">
+    <div class="min-h-screen max-w-3xl bg-transparent mx-auto mt-20 p-16">
+      <h1 class="text-2xl font-medium mb-2 text-center text-darkmodewhite-100"><span class="text-darkmodewhite-200">hello,</span> my name is</h1>
+      <h1 class="logo" class="text-center"><b>K<span>e</span>v<span>i</span>n Wa<span>ng</span></b></h1>
+      <h2 class="font-medium text-lg text-darkmodewhite-200 mb-4 tracking-wide text-center mt-5">I am a Junior at the <span class="text-cyan-300">University of Michigan</span> studying <span class="text-cyan-300">Computer Engineering</span>. I love software engineering, building cool robots, creating awesome products, and learning new things!</h2>
+      <!-- Social Bar -->
+      <div class="min-w-full flex flex-row justify-center fill-current text-darkmodewhite-100 my-5">
+        <a href="https://www.linkedin.com/in/kevin-wang-037b5b17a/" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewbox="0 0 512 512" class="mx-2 fill-current text-darkmodewhite-100 hover:text-cyan-300 transition duration-300 ease-in-out">
+            <path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"></path>          </svg>
+        </a>
+        <a href="https://github.com/kwwangkw" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewbox="0 0 512 512" class="mx-2 fill-current text-darkmodewhite-100 hover:text-cyan-300 transition duration-300 ease-in-out">
+            <path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path>
+          </svg>
+        </a>
+        <a href="mailto: kwwangkw@umich.edu" target="_blank" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewbox="0 0 512 512" class="mx-2 fill-current text-darkmodewhite-100 hover:text-cyan-300 transition duration-300 ease-in-out">
+            <path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"></path>          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div id="about" class="px-4 min-h-screen flex flex-col sm:py-3/4 max-w-6xl mx-auto jusity-center mb-8 md:-mt-16">
+    <div class="bg-transparent mb-5">
+      <h2 class="logo" class="font-medium text-2xl text-cyan-300"><b><strong>Ab<span>ou</span>t Me<span class="fontSize-xl font-sans font-black"> &#183;</span></strong></b></h2>
+    </div>
+    <div class="min-w-full flex flex-col space-y-10 lg:flex-row md:space-x-10 items-center py-5">
+      <div class="lg:w-1/2 px-4 py-10 bg-transparent sm:p-10 border-l border-darkmodewhite-100 hover:border-cyan-300 lg:ml-12">
+        <div class="min-w-full mx-auto space-y-6 text-darkmodewhite-100">
+          <p>Hi! My name is Kevin Wang, and I am a Junior at the <span class="text-cyan-300">University of Michigan</span> studying <span class="text-cyan-300">Computer Engineering</span>.</p>
+          <br>
+          <p>I love software engineering, building cool robots, creating awesome products, and learning new things!</p>
+          <br>
+          <p class="text-darkmodewhite-100">I will be joining <span class="text-cyan-300">SpaceX</span> as a Software and EMI Avionics Intern for the winter of 2021, and I will be joining <span class="text-cyan-300">Amazon</span> as a Software Development Engineer (SDE) Intern for the summer of 2021!</p>
+          <br>
+          <p>Recently, I have been using these technologies:</p>
+          <div class="justify-between grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <!-- C/C++-->
+            <div class="group flex flex-row items-center space-x-0 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewbox="0 0 512 512" class="group-hover:text-cyan-300 transform -translate-y-0.5 mx-2 fill-current text-darkmodewhite-100 transition duration-300 ease-in-out">
+                <path d="M278.24 129.65C278.24 147.69 262.49 162.34 243.09 162.34C223.69 162.34 207.95 147.69 207.95 129.65C207.95 111.61 223.69 96.96 243.09 96.96C262.49 96.96 278.24 111.61 278.24 129.65Z"></path><path d="M278.24 496.81C278.24 514.86 262.49 529.5 243.09 529.5C223.69 529.5 207.95 514.86 207.95 496.81C207.95 478.77 223.69 464.12 243.09 464.12C262.49 464.12 278.24 478.77 278.24 496.81Z"></path><path d="M268.78 107.58L475.21 313.54L268.78 519.5L220.53 472.2L378.76 313.54L217.75 151.67L268.78 107.58Z" id="b2LnpTRU5E"></path>
+              </svg>
+              <p class="group-hover:text-cyan-300 transition duration-300 ease-in-out">C/C++</p>
+            </div>
+            <!-- HTML/CSS-->
+            <div class="group flex flex-row items-center space-x-0 group">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewbox="0 0 512 512" class="group-hover:text-cyan-300 transform -translate-y-0.5 mx-2 fill-current text-darkmodewhite-100 transition duration-300 ease-in-out">
+                <path d="M278.24 129.65C278.24 147.69 262.49 162.34 243.09 162.34C223.69 162.34 207.95 147.69 207.95 129.65C207.95 111.61 223.69 96.96 243.09 96.96C262.49 96.96 278.24 111.61 278.24 129.65Z"></path><path d="M278.24 496.81C278.24 514.86 262.49 529.5 243.09 529.5C223.69 529.5 207.95 514.86 207.95 496.81C207.95 478.77 223.69 464.12 243.09 464.12C262.49 464.12 278.24 478.77 278.24 496.81Z"></path><path d="M268.78 107.58L475.21 313.54L268.78 519.5L220.53 472.2L378.76 313.54L217.75 151.67L268.78 107.58Z" id="b2LnpTRU5E"></path>
+              </svg>
+              <p class="group-hover:text-cyan-300 transition duration-300 ease-in-out">HTML/CSS</p>
+            </div>
+            <!-- Python -->
+            <div>
+              <div class="group flex flex-row items-center space-x-0 group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewbox="0 0 512 512" class="group-hover:text-cyan-300 transform -translate-y-0.5 mx-2 fill-current text-darkmodewhite-100 transition duration-300 ease-in-out">
+                  <path d="M278.24 129.65C278.24 147.69 262.49 162.34 243.09 162.34C223.69 162.34 207.95 147.69 207.95 129.65C207.95 111.61 223.69 96.96 243.09 96.96C262.49 96.96 278.24 111.61 278.24 129.65Z"></path><path d="M278.24 496.81C278.24 514.86 262.49 529.5 243.09 529.5C223.69 529.5 207.95 514.86 207.95 496.81C207.95 478.77 223.69 464.12 243.09 464.12C262.49 464.12 278.24 478.77 278.24 496.81Z"></path><path d="M268.78 107.58L475.21 313.54L268.78 519.5L220.53 472.2L378.76 313.54L217.75 151.67L268.78 107.58Z" id="b2LnpTRU5E"></path>
+                </svg>
+                <p class="group-hover:text-cyan-300 transition duration-300 ease-in-out">Python</p>
+              </div>
+            </div>
+            <!-- MATLAB -->
+            <div>
+              <div class="group flex flex-row items-center space-x-0 group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewbox="0 0 512 512" class="group-hover:text-cyan-300 transform -translate-y-0.5 mx-2 fill-current text-darkmodewhite-100 transition duration-300 ease-in-out">
+                  <path d="M278.24 129.65C278.24 147.69 262.49 162.34 243.09 162.34C223.69 162.34 207.95 147.69 207.95 129.65C207.95 111.61 223.69 96.96 243.09 96.96C262.49 96.96 278.24 111.61 278.24 129.65Z"></path><path d="M278.24 496.81C278.24 514.86 262.49 529.5 243.09 529.5C223.69 529.5 207.95 514.86 207.95 496.81C207.95 478.77 223.69 464.12 243.09 464.12C262.49 464.12 278.24 478.77 278.24 496.81Z"></path><path d="M268.78 107.58L475.21 313.54L268.78 519.5L220.53 472.2L378.76 313.54L217.75 151.67L268.78 107.58Z" id="b2LnpTRU5E"></path>
+                </svg>
+                <p class="group-hover:text-cyan-300 transition duration-300 ease-in-out">MATLAB</p>
+              </div>
+            </div>
+            <!-- Qt -->
+            <div>
+              <div class="group flex flex-row items-center space-x-0 group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewbox="0 0 512 512" class="group-hover:text-cyan-300 transform -translate-y-0.5 mx-2 fill-current text-darkmodewhite-100 transition duration-300 ease-in-out">
+                  <path d="M278.24 129.65C278.24 147.69 262.49 162.34 243.09 162.34C223.69 162.34 207.95 147.69 207.95 129.65C207.95 111.61 223.69 96.96 243.09 96.96C262.49 96.96 278.24 111.61 278.24 129.65Z"></path><path d="M278.24 496.81C278.24 514.86 262.49 529.5 243.09 529.5C223.69 529.5 207.95 514.86 207.95 496.81C207.95 478.77 223.69 464.12 243.09 464.12C262.49 464.12 278.24 478.77 278.24 496.81Z"></path><path d="M268.78 107.58L475.21 313.54L268.78 519.5L220.53 472.2L378.76 313.54L217.75 151.67L268.78 107.58Z" id="b2LnpTRU5E"></path>
+                </svg>
+                <p class="group-hover:text-cyan-300 transition duration-300 ease-in-out">Qt</p>
+              </div>
+            </div>
+            <!-- SolidWorks-->
+            <div>
+              <div class="group flex flex-row items-center space-x-0 group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewbox="0 0 512 512" class="group-hover:text-cyan-300 transform -translate-y-0.5 mx-2 fill-current text-darkmodewhite-100 transition duration-300 ease-in-out">
+                  <path d="M278.24 129.65C278.24 147.69 262.49 162.34 243.09 162.34C223.69 162.34 207.95 147.69 207.95 129.65C207.95 111.61 223.69 96.96 243.09 96.96C262.49 96.96 278.24 111.61 278.24 129.65Z"></path><path d="M278.24 496.81C278.24 514.86 262.49 529.5 243.09 529.5C223.69 529.5 207.95 514.86 207.95 496.81C207.95 478.77 223.69 464.12 243.09 464.12C262.49 464.12 278.24 478.77 278.24 496.81Z"></path><path d="M268.78 107.58L475.21 313.54L268.78 519.5L220.53 472.2L378.76 313.54L217.75 151.67L268.78 107.58Z" id="b2LnpTRU5E"></path>
+                </svg>
+                <p class="group-hover:text-cyan-300 transition duration-300 ease-in-out">SolidWorks</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="group">
+        <div class="w-1/3 md:w-1/2 lg:w-full min-h-full max-w-xxs border-darkmodewhite-100 border-2 border-opacity-25 rounded-tl-lg transition duration-300 ease-in-out group-hover:border-opacity-75 group-hover:border-cyan-300">
+          <div class="transform translate-x-3 translate-y-3">
+            <img class="pfp rounded-tl-lg" src="/kevinpfp.jpg" alt="Kevin Profile Picture">
+          </div>
+        </div>    
+      </div>
+    </div>
+  </div>
+
+  <!-- Experience -->
+  <div id="experience" class="px-4 min-h-screen flex flex-col sm:py-3/4 max-w-6xl mx-auto jusity-center mt-16 lg:mt-0">
+    <div class="bg-transparent mb-5">
+      <h2 class="logo" class="font-medium text-2xl text-cyan-300"><b><strong>Ex<span>p</span>erience<span class="fontSize-xl font-sans font-black"> &#183;</span></strong></b></h2>
+    </div>
+  </div>
+  
+  <!-- Projects -->
+  <div id="projects" class="px-4 min-h-screen flex flex-col sm:py-3/4 max-w-6xl mx-auto jusity-center mt-16 lg:mt-0">
+    <div class="bg-transparent mb-5">
+      <h2 class="logo" class="font-medium text-2xl text-cyan-300"><b><strong><span>P</span>rojects<span class="fontSize-xl font-sans font-black"> &#183;</span></strong></b></h2>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact" class="px-4 min-h-screen max-w-4xl flex flex-col sm:py-3/4 mx-auto justify-center lg:mt-0 -mb-20">
+    <div class="bg-transparent mb-5 -mt-20">
+      <h2 class="logo" class="font-medium text-2xl text-cyan-300"><b><strong>Ge<span>t</span><span class="fontSize-xl font-sans font-black"> &#183;</span>In<span class="fontSize-xl font-sans font-black"> &#183;</span>Touch</strong></b></h2>
+    </div>
+    <div class="max-w-full">
+      <h2 class="text-darkmodewhite-100 text-xl text-center mb-6">I would love to hear from you! Feel free to reach out any time and I will get back to you as soon as possible.</h2>
+    </div>
+    <div>
+        <button style="outline:none; margin:0 auto; display:block;" class="text-darkmodewhite-200 text-xl text-center border-2 rounded border-darkmodewhite-200 py-2 px-4 hover:bg-cyan-300 hover:bg-opacity-15">
+          <a href="mailto: kwwangkw@umich.edu" target="_blank" title="Email">
+            Contact Me  
+          </a>
+        </button>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <span>
+    <div class="lg:px-16 pr-6 bg-gray-1000 flex flex-wrap items-center lg:py-1 py-0 lg:mx-20 mr-6 ml-10 mb-2 border-b border-darkmodewhite-100"></div>
+  </span>
+
+  <!-- Footer -->
+  <div class="min-h-full flex flex-col justify-center items-center">
+  <div class="min-w-full flex flex-row justify-center fill-current text-darkmodewhite-100 mb-5 -mt-1">
+    <a href="https://www.linkedin.com/in/kevin-wang-037b5b17a/" target="_blank" title="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewbox="0 0 512 512" class="mx-2 fill-current text-darkmodewhite-100 hover:text-cyan-300 transition duration-300 ease-in-out">
+        <path d="M186.4 142.4c0 19-15.3 34.5-34.2 34.5 -18.9 0-34.2-15.4-34.2-34.5 0-19 15.3-34.5 34.2-34.5C171.1 107.9 186.4 123.4 186.4 142.4zM181.4 201.3h-57.8V388.1h57.8V201.3zM273.8 201.3h-55.4V388.1h55.4c0 0 0-69.3 0-98 0-26.3 12.1-41.9 35.2-41.9 21.3 0 31.5 15 31.5 41.9 0 26.9 0 98 0 98h57.5c0 0 0-68.2 0-118.3 0-50-28.3-74.2-68-74.2 -39.6 0-56.3 30.9-56.3 30.9v-25.2H273.8z"></path>          </svg>
+    </a>
+    <a href="https://github.com/kwwangkw" target="_blank" title="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewbox="0 0 512 512" class="mx-2 fill-current text-darkmodewhite-100 hover:text-cyan-300 transition duration-300 ease-in-out">
+        <path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"></path>
+      </svg>
+    </a>
+    <a href="mailto: kwwangkw@umich.edu" target="_blank" title="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewbox="0 0 512 512" class="mx-2 fill-current text-darkmodewhite-100 hover:text-cyan-300 transition duration-300 ease-in-out">
+        <path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"></path>          </svg>
+    </a>
+  </div>
+    <h1 class="text-darkmodewhite-100 -mt-6 text-sm">Website built by Kevin Wang</h1>
+  </div>
+</body>
+</html>
