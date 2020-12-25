@@ -25,7 +25,8 @@ module.exports = {
         700: '#4a5568',
         800: '#2d3748',
         900: '#1a202c',
-        1000: '#212121',
+        1100: '#212121', // Lighter Background
+        1000: '#121212', // Darker Background
         //1000: '#26282b',
         //1000: '#222831',
       },
@@ -194,6 +195,7 @@ module.exports = {
       sm: '0.125rem',
       default: '0.25rem',
       lg: '0.5rem',
+      xl: '1.5rem',
       full: '9999px',
     },
     borderWidth: {
@@ -350,6 +352,7 @@ module.exports = {
       '4xl': '56rem',
       '5xl': '64rem',
       '6xl': '72rem',
+      '7xl': '90rem',
       full: '100%',
     },
     minHeight: {
@@ -378,6 +381,7 @@ module.exports = {
       '25': '0.25',
       '50': '0.5',
       '75': '0.75',
+      '90': '0.9',
       '100': '1',
     },
     order: {
