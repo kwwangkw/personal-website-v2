@@ -1,7 +1,7 @@
 # Welcome to Kevin Wang's Personal Website
-# To visit the live site, check it out at: kevinjwang.com
+# To visit the live site, check it out at: https://www.kevinjwang.com
 
-This project is an iteration of Kevin Wang's personal portfolio website built using HTML, CSS, Tailwind, and JS
+This project is an iteration of Kevin Wang's personal portfolio website built using HTML, CSS, Tailwind, and JS.
 
 To get started with the development server:
 
@@ -30,3 +30,5 @@ yarn run production
 ```
 
 After that's done, check out `./public/build/tailwind.css` to see the optimized output.
+
+## Hosted using Netlify and Namecheap
