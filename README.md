@@ -1,4 +1,5 @@
 # Welcome to Kevin Wang's Personal Website
+# To visit the live site, check it out at: www.kevinjwang.com or https://musing-bose-6ddc2d.netlify.app/
 
 This project is an iteration of Kevin Wang's personal portfolio website built using HTML, CSS, Tailwind, and JS
 
