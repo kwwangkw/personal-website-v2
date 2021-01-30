@@ -506,7 +506,7 @@ module.exports = {
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
-    textDecoration: ['responsive', 'hover', 'focus'],
+    textDecoration: ['responsive', 'hover', 'focus', 'group-hover'],
     textTransform: ['responsive'],
     userSelect: ['responsive'],
     verticalAlign: ['responsive'],
