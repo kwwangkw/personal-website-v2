@@ -224,8 +224,9 @@
         var nav = document.getElementById('menu');
 
         btn.classList.toggle('open');
-        nav.classList.toggle('flex');
-        nav.classList.toggle('hidden');
+        // nav.classList.toggle('flex');
+        // nav.classList.toggle('hidden');
+        $("nav").slideToggle(410);
       }
     </script>
     <div class="flex-1 flex justify-between items-center">
@@ -244,8 +245,8 @@
     </label>
 
     <input class="hidden" type="checkbox" id="menu-toggle" />
-    <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
-      <nav>
+    <div class="lg:flex lg:items-center lg:w-auto w-full" id="menu">
+      <nav class="hidden lg:block">
         <ul class="lg:flex items-center justify-between text-base text-darkmodewhite-100 pt-4 lg:pt-0">
           <li><a class="ml-5 w-full lg:p-4 py-3 px-0 block border-transparent hover:text-cyan-300" href="#top">Home</a></li>
           <li><a class="ml-5 w-full lg:p-4 py-3 px-0 block border-transparent hover:text-cyan-300" href="#about">About</a></li>
