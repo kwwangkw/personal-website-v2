@@ -71,6 +71,10 @@
   }
   </style>
   <style>
+      #showOnLg {
+        display: hidden;
+      }
+
       #menu-toggle:checked + #menu {
         display: block;
       }
@@ -145,7 +149,7 @@
       }
 
       @media screen and (max-width: 480px) {
-        #smallscreenlogo {
+        #smallscreenlogo nav {
           font-family: "Neon Tubes";
           color: #67E8F9;
           text-shadow: 0 2px 30px, 0 0 1px;
@@ -219,15 +223,46 @@
   <div class="w-full fixed top-0 bg-opacity-85 bg-gray-1000 z-10"> <!--Sticky Nav Bar Start -->
   <header class="lg:px-16 px-6 mt-3 flex flex-wrap items-center lg:py-0 py-2">
     <script>
+      open = false;
       function navToggle() {
         var btn = document.getElementById('menuBtn');
         var nav = document.getElementById('menu');
 
         btn.classList.toggle('open');
-        // nav.classList.toggle('flex');
-        // nav.classList.toggle('hidden');
+        if (open){
+          open = false;
+        }
+        else{
+          open = true;
+        }
         $("nav").slideToggle(410);
       }
+
+      // Nav bar showing correct elements on resize and startup
+      function navOnResize(x) {
+        if (!x.matches) { // large screen
+          document.getElementById('showOnLg').setAttribute("style", "display: block;");
+        } else { // small screen
+          document.getElementById('showOnLg').setAttribute("style", "display: hidden;");
+          if (open) {
+            var btn = document.getElementById('menuBtn');
+            btn.classList.toggle('open');
+            open = false;
+          }
+        }
+      }
+
+      var x = window.matchMedia("(max-width: 1024px)")
+      document.addEventListener("DOMContentLoaded", function() {
+        if (x.matches) {
+          var btn = document.getElementById('menuBtn');
+        }
+      });
+      document.addEventListener("DOMContentLoaded", function() {
+        navOnResize(x) // Call listener function at run time
+        open = false;
+      });
+      x.addListener(navOnResize) // Attach listener function on state changes
     </script>
     <div class="flex-1 flex justify-between items-center">
         <a href="#top">
@@ -246,7 +281,7 @@
 
     <input class="hidden" type="checkbox" id="menu-toggle" />
     <div class="lg:flex lg:items-center lg:w-auto w-full" id="menu">
-      <nav class="hidden lg:block">
+      <nav class="hidden" id="showOnLg">
         <ul class="lg:flex items-center justify-between text-base text-darkmodewhite-100 pt-4 lg:pt-0">
           <li><a class="ml-5 w-full lg:p-4 py-3 px-0 block border-transparent hover:text-cyan-300" href="#top">Home</a></li>
           <li><a class="ml-5 w-full lg:p-4 py-3 px-0 block border-transparent hover:text-cyan-300" href="#about">About</a></li>
